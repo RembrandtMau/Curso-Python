@@ -23,8 +23,8 @@ while intentos > 0:
     elif estimacion == numero_secreto:
         print(f"Felicidades {nombre} has acertado el numero que estaba pensando era {numero_secreto}. Lo resolviste en {8 - intentos}")
         break
-
     else: 
         print("Ingresa una respuesta valida.")
+        continue
 if estimacion != numero_secreto:
     print(f"Te quedaste sin intentos {nombre}, mejor suerte la proxima. El numero secreto era {numero_secreto}")
