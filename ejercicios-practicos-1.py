@@ -1,40 +1,28 @@
 def registro_numeros():
-    int1 = int(input("Ingresa tu primer valor: "))
-    int2 = int(input("Ingresa tu segundo valor: "))
-    int3 = int(input("Ingresa tu tercer valor: "))
-    return int1, int2, int3
-
+    numeros = []
+    for i in range(1, 4):
+        numero = int(input(f"Ingresa tu valor {i}: "))
+        numeros.append(numero)
+        numeros.sort()
+    return numeros
 
 def devolver_distintos(registro):
-    total = 0
-    num_mayor = 0 
-    num_menor = 0
-    list = []
-    new_list = []
-    
-    for numero in registro:
-        list.append(numero)
-        list.sort()
-        total += numero
-    
+    total = sum(registro)
+    num_mayor = max(registro)
+    num_menor = min(registro)
+
     if total > 15: 
-        num_mayor = max(list)
         print(f"La suma de tus numeros fue mayor a 15, esta fue la suma de tus numeros: {total}\nY tu numero mayor es: {num_mayor}")
         return num_mayor
     
     elif total < 10:
-        num_menor = min(list)
         print(f"La suma de tus numeros fue menor a 10, esta fue la suma de tus numeros: {total}\nY tu numero menor es: {num_menor}")
         return num_menor
     
     else:
-        num_mayor = max(list)
-        num_menor = min(list)
-        for num in list:
-            if num != num_mayor and num != num_menor:
-                new_list.append(num)
-        print(f"La suma de tus numeros esta en el rango de 10 a 15, esta fue la suma de tus numeros: {total}\nY tu numero intermedio es: {new_list}")
-        return new_list
+        medio = [n for n in registro if n != num_mayor and n != num_menor]
+        print(f"La suma de tus numeros esta en el rango de 10 a 15, esta fue la suma de tus numeros: {total}\nY tu numero intermedio es: {medio}")
+        return medio
 
 
 
