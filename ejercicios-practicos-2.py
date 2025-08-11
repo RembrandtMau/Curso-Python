@@ -6,7 +6,7 @@ def ordenamiento(palabra):
     unico = []
     for l in palabra:
         if l not in unico:
-            unico.append(l)
+            unico.append(l) 
     unico.sort()
 
     print(unico)
