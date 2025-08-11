@@ -30,14 +30,15 @@ Crees ser capaz de lograrlo???? (YES OR NO)\n""").lower()
     
     while inicio not in ("yes", "no"):
         inicio = input("Respuesta invalida, intente otra vez. (YES OR NO)\n").lower()
-
-    if inicio == "yes":    
-        palabra = len(opciones)
-        palabra_oculta = palabra * '_'
-        print(f"""{pistas}
+    match inicio:
+        case "yes":    
+            palabra = len(opciones)
+            palabra_oculta = palabra * '_'
+            print(f"""{pistas}
 {"  ".join(palabra_oculta)}""")
-    else:
-        print("Vete a otro lado mi todo tibio...")
+        case _:
+            print("Vete a otro lado mi todo tibio...")
+            exit()
     return palabra_oculta
 
 def intentos(opciones, palabra_oculta):
